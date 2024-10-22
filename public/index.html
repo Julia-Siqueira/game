@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Estilo Kahoot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jogo Estilo Kahoot</h1>
+
+    <!-- Tela de Configuração do Jogo -->
+    <div id="setup">
+        <h2>Configurar Jogo</h2>
+        <input type="number" id="numPlayers" placeholder="Número de Jogadores" min="1">
+        <button id="startSetupBtn">Iniciar Configuração</button>
+        <div id="setupError" class="error"></div>
+    </div>
+
+    <!-- Tela de Coleta de Nomes -->
+    <div id="collectNames" style="display:none;">
+        <h2>Insira o Nome do Jogador <span id="currentPlayer"></span></h2>
+        <input type="text" id="playerNameInput" placeholder="Nome do Jogador">
+        <button id="submitPlayerNameBtn">Enviar Nome</button>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="game" style="display:none;">
+        <h2>Pergunta <span id="questionNumber"></span> de <span id="totalQuestions"></span></h2>
+        <p id="question"></p>
+        <div id="options"></div>
+        <button id="submitAnswerBtn" style="display:none;">Enviar Resposta</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- Tela de Resultados -->
+    <div id="results" style="display:none;">
+        <h2>Resultados Finais</h2>
+        <div id="finalResults"></div>
+        <button id="restartBtn">Reiniciar Jogo</button>
+    </div>
+
+    <!-- Lista de Jogadores -->
+    <div id="playersList">
+        <h3>Jogadores:</h3>
+        <ul id="players"></ul>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
